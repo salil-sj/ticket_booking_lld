@@ -8,7 +8,7 @@ import java.util.Date;
 @Getter
 @AllArgsConstructor
 public class Show {
-    private int id;
+    private String id;
     private Movie movie;
     private Screen screen;
     private Date startTime;

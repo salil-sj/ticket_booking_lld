@@ -4,6 +4,7 @@ import com.lld.ticketBooking.ticketBooking.exceptions.NotFoundException;
 import com.lld.ticketBooking.ticketBooking.model.Screen;
 import com.lld.ticketBooking.ticketBooking.model.Seat;
 import com.lld.ticketBooking.ticketBooking.model.Theatre;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import java.util.HashMap;
@@ -12,16 +13,23 @@ import java.util.UUID;
 
 public class TheatreService {
 
-    private final Map<String , Theatre> theatres;
-    private final Map<String , Screen> screens;
-    private final Map<String , Seat> seats;
+    private static final TheatreService INSTANCE = new TheatreService();
+    /*
+    We could have just made the fields public and accessed it using className.field,
+     but then it would have defeated our encapsulation.
+     Encapsulation says that you have to encapsulate the class and its related methods
+     inside the class. So that would have been defeated.
+     */
+    private static final Map<String , Theatre> theatres = new HashMap<>();
+    private static final Map<String , Screen> screens  = new HashMap<>();
+    private static final Map<String , Seat> seats = new HashMap<>();
 
-    public TheatreService()
-    {
-        this.theatres= new HashMap<>();
-        this.screens= new HashMap<>();
-        this.seats= new HashMap<>();
+    private TheatreService(){}
+
+    public static TheatreService getInstance(){
+        return INSTANCE;
     }
+
 
     public Theatre createTheatre(@NonNull final String theatreName) {
         String theatreId = UUID.randomUUID().toString();
