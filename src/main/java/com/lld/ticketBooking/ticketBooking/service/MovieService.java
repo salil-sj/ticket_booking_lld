@@ -19,9 +19,10 @@ public class MovieService {
     }
 
     public Movie createMovie(String movieName) {
-        Movie movie = new Movie(UUID.randomUUID().toString() , movieName);
-        movies.put(movie.getId(), movie);
-        return movie;
+       // Movie movie = new Movie(UUID.randomUUID().toString() , movieName);
+        //movies.put(movie.getId(), movie);
+        //return movie;
+        return null;
     }
 
     public Movie getMovie(String movieId){

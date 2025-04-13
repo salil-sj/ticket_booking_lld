@@ -4,6 +4,7 @@ import com.lld.ticketBooking.ticketBooking.exceptions.NotFoundException;
 import com.lld.ticketBooking.ticketBooking.model.Screen;
 import com.lld.ticketBooking.ticketBooking.model.Seat;
 import com.lld.ticketBooking.ticketBooking.model.Theatre;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
