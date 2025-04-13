@@ -9,11 +9,17 @@ import java.util.List;
 
 public class BookingController {
 
-//    public String createBooking(Show show, List<Seat> seats , String user){
-//        Booking
-//    }
-//
-//    public
+    public String createBooking(Show show, List<String> seatIds , String user){
+
+    }
+
+
+
+    private String id;
+    private Show show;
+    private List<Seat> seatsBooked;
+    private String user;
+    private BookingStatus bookingStatus;
 
 
 }
